@@ -1,0 +1,20 @@
+services:
+  demo1:
+    image: oarkflow/web-server:latest
+    container_name: demo1
+    volumes:
+      - ./demo1.env:/.env:ro      # mount your .env into /app/.env (read‑only)
+      - ./demo1:/static/public     # mount local assets dir into /app/assets
+    ports:
+      - "3003:3003"             # map host 8081 to container 8080
+    restart: unless-stopped
+
+  demo2:
+    image: oarkflow/web-server:latest
+    container_name: demo2
+    volumes:
+      - ./demo2.env:/.env:ro
+      - ./demo2:/static/public
+    ports:
+      - "3002:3002"             # map host 8082 to container 8080
+    restart: unless-stopped
