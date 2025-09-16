@@ -31,3 +31,14 @@ services:
     ports:
       - "3001:3001"             # map host 8082 to container 8080
     restart: unless-stopped
+
+  verishore:
+    image: oarkflow/web-server:latest
+    platform: linux/amd64
+    container_name: verishore
+    volumes:
+      - ./verishore.env:/.env:ro
+      - ./verishore:/static/public
+    ports:
+      - "3000:3000"             # map host 8082 to container 8080
+    restart: unless-stopped
