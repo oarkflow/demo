@@ -26,6 +26,7 @@ services:
     platform: linux/amd64
     container_name: sujit-baniya
     volumes:
+      - ./sujit-baniya.env:/.env:ro
       - ./sujit-baniya:/static/public
     ports:
       - "3001:3001"             # map host 8082 to container 8080
