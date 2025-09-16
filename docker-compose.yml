@@ -1,6 +1,7 @@
 services:
   demo1:
     image: oarkflow/web-server:latest
+    platform: linux/amd64
     container_name: demo1
     volumes:
       - ./demo1.env:/.env:ro      # mount your .env into /app/.env (read‑only)
@@ -11,6 +12,7 @@ services:
 
   demo2:
     image: oarkflow/web-server:latest
+    platform: linux/amd64
     container_name: demo2
     volumes:
       - ./demo2.env:/.env:ro
@@ -21,6 +23,7 @@ services:
 
   sujit-baniya:
     image: oarkflow/web-server:latest
+    platform: linux/amd64
     container_name: sujit-baniya
     volumes:
       - ./sujit-baniya.env:/.env:ro
