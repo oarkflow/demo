@@ -18,3 +18,13 @@ services:
     ports:
       - "3002:3002"             # map host 8082 to container 8080
     restart: unless-stopped
+
+  sujit-baniya:
+    image: oarkflow/web-server:latest
+    container_name: sujit-baniya
+    volumes:
+      - ./sujit-baniya.env:/.env:ro
+      - ./sujit-baniya:/static/public
+    ports:
+      - "3001:3001"             # map host 8082 to container 8080
+    restart: unless-stopped
