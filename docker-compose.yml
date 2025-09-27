@@ -5,7 +5,7 @@ services:
     container_name: orgware
     volumes:
       - ./orgware.env:/.env:ro # mount your .env into /app/.env (read‑only)
-      - ./demo1:/static/public # mount local assets dir into /app/assets
+      - ./orgware:/static/public # mount local assets dir into /app/assets
     ports:
       - "3004:3004" # map host 3004 to container 3004
     restart: unless-stopped
