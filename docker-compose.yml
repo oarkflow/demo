@@ -1,10 +1,11 @@
+version: "3.9"
+
 services:
-  infraweave:
-    image: oarkflow/web-server:latest
-    platform: linux/amd64
-    container_name: orgware
+  web:
+    image: nginx:alpine
+    container_name: dist_server
     volumes:
-      - ./infraweave.env:/.env:ro # mount your .env into /app/.env (read‑only)
-      - ./infraweave:/static/public # mount local assets dir into /app/assets
+      - ./dist:/usr/share/nginx/html:ro   # Serve your dist folder
     ports:
-      - "3001:3001" # map host 3004 to container 3004
+      - "3001:80"                         # Expose dist at http://localhost:3001
+    restart: always
