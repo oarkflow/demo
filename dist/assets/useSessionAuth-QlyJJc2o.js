@@ -1,1 +1,0 @@
-import"./vendor-react-CQIth8Kl.js";import"./main-BXfqrH9P.js";const e="applicant_session_active";function o(){sessionStorage.setItem(e,"true")}function i(){sessionStorage.removeItem(e)}export{i as c,o as m};
