@@ -1,0 +1,1 @@
+import"./vendor-react-BKlpBF4k.js";import"./main-BJksuSgA.js";const e="applicant_session_active";function o(){sessionStorage.setItem(e,"true")}function i(){sessionStorage.removeItem(e)}export{i as c,o as m};
